@@ -1,4 +1,4 @@
-package id.co.acc.product;
+package id.co.acc.domain;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
