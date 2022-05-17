@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+
 @Setter
 @Getter
 @NoArgsConstructor
@@ -20,5 +22,9 @@ public class ApiResponse {
         apiResponse.setOUT_MESS("Success");
         apiResponse.setOUT_DATA(data);
         return apiResponse;
+    }
+
+    public static ApiResponse error(String status, String message) {
+        return new ApiResponse(status, message, new ArrayList<>());
     }
 }
