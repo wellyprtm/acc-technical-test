@@ -1,5 +1,6 @@
 package id.co.acc.domain.base.dtos;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -12,15 +13,19 @@ import java.util.ArrayList;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ApiResponse {
-    private String OUT_STAT;
-    private String OUT_MESS;
-    private Object OUT_DATA;
+
+    @JsonProperty(value = "OUT_STAT")
+    private String outStat;
+    @JsonProperty(value = "OUT_MESS")
+    private String outMess;
+    @JsonProperty(value = "OUT_DATA")
+    private Object outData;
 
     public static ApiResponse data(final Object data) {
         final ApiResponse apiResponse = new ApiResponse();
-        apiResponse.setOUT_STAT("T");
-        apiResponse.setOUT_MESS("Success");
-        apiResponse.setOUT_DATA(data);
+        apiResponse.setOutStat("T");
+        apiResponse.setOutMess("Success");
+        apiResponse.setOutData(data);
         return apiResponse;
     }
 

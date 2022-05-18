@@ -9,5 +9,5 @@ import java.util.Map;
 @Setter
 @Getter
 public class BrandRequestDto {
-        private Map<String, String> getListFilterUnitBrand;
+        private BaseRequestSearchDto getListFilterUnitBrand;
 }

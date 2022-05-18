@@ -24,7 +24,7 @@ public class BrandController {
 
     @PostMapping(value = "search")
     public ApiResponse search(@RequestBody BrandRequestDto body) {
-        String param = body.getGetListFilterUnitBrand().get("P_SEARCH");
+        String param = body.getGetListFilterUnitBrand().getPsearch();
         if (validateParam(param)) {
             return ApiResponse.data(brandService.search(param));
         } else {

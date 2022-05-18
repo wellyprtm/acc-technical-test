@@ -1,5 +1,6 @@
 package id.co.acc.domain.brand.dtos;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import id.co.acc.domain.brand.entities.Brand;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,15 +15,12 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BrandDto {
-    private String CD_BRAND;
-    private String DESC_BRAND;
 
-    public Brand toEntity() {
-        Brand entity = new Brand();
-        entity.setCdBrand(CD_BRAND);
-        entity.setDescBrand(DESC_BRAND);
-        return entity;
-    }
+    @JsonProperty(value = "CD_BRAND")
+    private String cdBrand;
+
+    @JsonProperty(value = "DESC_BRAND")
+    private String descBrand;
 
     public static List<BrandDto> fromEntities(List<Brand> entities) {
         List<BrandDto> dtos = new ArrayList<>();
